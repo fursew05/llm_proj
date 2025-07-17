@@ -1,0 +1,11 @@
+# 가상환경 폴더 무시 (uv는 보통 .venv 폴더에 생성)
+.venv/
+__pycache__/
+*.pyc
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
