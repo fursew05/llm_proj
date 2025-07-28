@@ -15,4 +15,7 @@ dependencies = [
     "tiktoken>=0.9.0",
     "streamlit==1.25.0",
     "transformers>=4.54.0",
+    "torch >= 2.7.1+cu126",
+    "torchaudio >= 2.7.1+cu126",
+    "torchvision >= 0.22.1+cu126",
 ]
