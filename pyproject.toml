@@ -10,9 +10,9 @@ dependencies = [
     "ipykernel>=6.29.5",
     "load-dotenv>=0.1.0",
     "openai>=1.96.1",
-    "openai==1.58.1",
     "pymupdf>=1.26.3",
     "python-dotenv>=1.1.1",
     "tiktoken>=0.9.0",
     "streamlit==1.25.0",
+    "transformers>=4.54.0",
 ]
