@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: llm-proj
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: altair<5
+Requires-Dist: dotenv>=0.9.9
+Requires-Dist: ipykernel>=6.29.5
+Requires-Dist: load-dotenv>=0.1.0
+Requires-Dist: openai>=1.96.1
+Requires-Dist: pymupdf>=1.26.3
+Requires-Dist: python-dotenv>=1.1.1
+Requires-Dist: tiktoken>=0.9.0
+Requires-Dist: streamlit==1.25.0
+Requires-Dist: transformers>=4.54.0
+Requires-Dist: torch>=2.7.1
+Requires-Dist: torchaudio>=2.7.1
+Requires-Dist: torchvision>=0.22.1

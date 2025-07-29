@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+code/ch01/gpt_basic.py
+code/ch02/main.py
+code/ch02/main2.py
+code/ch04/pdf_to_txt.py
+code/ch04/summary.py
+code/ch04/text_preprocessing.py
+code/ch05/whisper_stt.py
+code/llm_proj.egg-info/PKG-INFO
+code/llm_proj.egg-info/SOURCES.txt
+code/llm_proj.egg-info/dependency_links.txt
+code/llm_proj.egg-info/requires.txt
+code/llm_proj.egg-info/top_level.txt
