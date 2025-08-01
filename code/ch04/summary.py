@@ -49,8 +49,8 @@ from dotenv import load_dotenv
 import tiktoken
 
 load_dotenv()
-api_key = os.getenv("OPEN_API_KEY")
-client = OpenAI(api_key=api_key)
+api_key = os.getenv("LLAMA_KEY")
+client = OpenAI(base_url='http://127.0.0.1:8080/v1', api_key=api_key)
 
 # 최대 입력 토큰 수 제한
 MAX_INPUT_TOKENS = 7000  # gpt-4o는 최대 128k지만 TPM제한 고려
@@ -96,10 +96,10 @@ def summarize_chunk(text_chunk):
     full_prompt = system_prompt + text_chunk
 
     response = client.chat.completions.create(
-        model='gpt-4o',
+        model='Qwen-8B-GGUF',
         temperature=0.1,
         messages=[
-            {"role": "system", "content": full_prompt}
+            {"role": "system", "content": full_prompt + "/no_think"}
         ]
     )
 
@@ -128,7 +128,7 @@ def summarize_txt(txt_file_path):
 
 # 실행부
 if __name__ == "__main__":
-    file_path = "C://Users//fursew//project//llm_proj//ch04//output//한국은행 5월 경제전망보고서_with_preprocessing.txt"
+    file_path = r"C:\Users\fursew\project\open_ai\code\ch04\output\한국은행 5월 경제전망보고서_with_preprocessing.txt"
     summary = summarize_txt(file_path)
 
     with open("ch04/output/summary.txt", "w", encoding='utf-8') as f:
