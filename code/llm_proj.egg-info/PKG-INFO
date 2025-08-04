@@ -17,3 +17,4 @@ Requires-Dist: transformers>=4.54.0
 Requires-Dist: torch>=2.7.1
 Requires-Dist: torchaudio>=2.7.1
 Requires-Dist: torchvision>=0.22.1
+Requires-Dist: python-docx>=1.2.0

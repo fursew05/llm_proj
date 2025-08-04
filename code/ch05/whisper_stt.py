@@ -7,7 +7,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 token = os.getenv("HUGGING_TOKEN")
-print('HuggingFace Token:', token)
 
 # mp3 파일에 대해서 텍스트로 바꿔주는 함수
 def whisper_stt(audio_file_path,stt_output_file_path):
@@ -88,7 +87,7 @@ def spk_diarization(audio_file_path:str,
 
     for i in range(1,len(df_rttm)):
         if df_rttm.at[i,'speaker_id'] != df_rttm.at[i-1,'speaker_id']:
-            df_rttm.at[i,'number'] += 1
+            df_rttm.at[i,'number'] = df_rttm.at[i-1,'number'] + 1
         else:
             df_rttm.at[i,'number'] = df_rttm.at[i-1,'number']
     
@@ -126,10 +125,10 @@ def stt_to_rttm(audio_file_path : str,
             overlap = max(0,min(row_stt['end'],row_rttm['end'])-max(row_stt['start'],row_rttm['start']))
             overlap_dict[i_rttm] = overlap
         max_overlap = max(overlap_dict.values())
-        max_overlap_idx = map(overlap_dict,key=overlap_dict.get)
+        max_overlap_idx = max(overlap_dict,key=overlap_dict.get)
 
         if max_overlap > 0 :
-            df_rttm.at[max_overlap_idx,'text'] += row_stt["text"] + "\n"
+            df_rttm.at[max_overlap_idx,'text'] += row_stt["text"]
     
     df_rttm.to_csv(
         final_output_file_path,
@@ -141,11 +140,13 @@ def stt_to_rttm(audio_file_path : str,
 
 if __name__ == '__main__':
 
-    audio_file_path = "code\ch05\음성녹음.mp3"
-    stt_output_file_path = './ch05/output/audio_to_stt.csv'
-    rttm_file_path = './ch05/output/audio_diarization.rttm'
-    output_file_path = './ch05/output/diarization_output.csv'
-    final_output_file_path = './ch05/output/final_output.csv'
+    print(os.getcwd())
+
+    audio_file_path = "./code/ch05/음성녹음.mp3"
+    stt_output_file_path = './code/ch05/output/audio_to_stt.csv'
+    rttm_file_path = './code/ch05/output/audio_diarization.rttm'
+    output_file_path = './code/ch05/output/diarization_output.csv'
+    final_output_file_path = './code/ch05/output/final_output.csv'
 
     # mp3 -> STT
     result, df = whisper_stt(audio_file_path,stt_output_file_path)
