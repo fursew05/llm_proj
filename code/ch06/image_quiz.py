@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 import os
 import json
 
+
 load_dotenv()
 api_key = os.getenv('OPEN_API_KEY')
 client = OpenAI(api_key=api_key)
@@ -14,8 +15,10 @@ def encode_image(image_path):
         return base64.b64encode(img.read()).decode("utf-8")
 
 def image_quiz(image_path,n_trial=0,max_trial=3):
+
     if n_trial > max_trial:
         raise Exception("Failed to generate a quiz.")
+    
     base64_image = encode_image(image_path=image_path)
     quiz_prompt = """
     제공한 이미지를 바탕으로, 다음과 같은 양식으로 퀴즈를 만들어주세요.
@@ -65,7 +68,7 @@ def image_quiz(image_path,n_trial=0,max_trial=3):
     
     content = response.choices[0].message.content
 
-    if "Listening:" in content:
+    if "Listening:" in content: 
         return content, True
     else:
         return image_quiz(image_path, n_trial = n_trial+1)
@@ -74,7 +77,7 @@ if __name__ == "__main__":
     txt = ''
     eng_dict = []
     no = 1
-    for g in glob('quiz_image/*.jpg'):
+    for g in glob('./code/ch06/quiz_image/*.jpg'):
         try:
             q, is_suceed = image_quiz(g)
 
@@ -92,7 +95,7 @@ if __name__ == "__main__":
 
         print(q)
         txt += q + "\n\n-----------------------\n\n"
-        with open("output/image_quiz.md",'w',encoding='utf-8') as f:
+        with open("code/ch06/output/image_quiz.md",'w',encoding='utf-8') as f:
             f.write(txt)
         eng = q.split("Listening: ")[1].split('정답:')[0].strip()
 
@@ -101,6 +104,7 @@ if __name__ == "__main__":
             'eng' : eng,
             'img' : filename
         })
-        with open("output/image_quiz_eng.json",'w',encoding='utf-8') as f:
+        with open("code/ch06/output/image_quiz_eng.json",'w',encoding='utf-8') as f:
             json.dump(eng_dict,f,ensure_ascii=False,indent=4)
+
         no+=1

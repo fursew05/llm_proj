@@ -19,3 +19,4 @@ Requires-Dist: torchaudio>=2.7.1
 Requires-Dist: torchvision>=0.22.1
 Requires-Dist: python-docx>=1.2.0
 Requires-Dist: ipython>=9.4.0
+Requires-Dist: yfinance>=0.2.65

@@ -20,6 +20,7 @@ dependencies = [
     "torchvision >= 0.22.1",
     "python-docx>=1.2.0",
     "ipython>=9.4.0",
+    "yfinance>=0.2.65",
 ]
 
 

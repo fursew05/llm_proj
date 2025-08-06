@@ -1,0 +1,17 @@
+[
+    {
+        "no": 1,
+        "eng": "Which of the following descriptions of the image is incorrect?  \n(1): It shows cars driving on the road.  \n(2): People are crossing at the crosswalk.  \n(3): There are tall buildings lined up alongside the road.  \n(4): An airplane is flying in the sky.",
+        "img": "4.jpg"
+    },
+    {
+        "no": 2,
+        "eng": "Which of the following descriptions of the image is incorrect?\n(1) : People are waiting at a train station.\n(2) : The platform number is 4.\n(3) : Everyone is sitting.\n(4) : There is a trash can on the platform.",
+        "img": "5.jpg"
+    },
+    {
+        "no": 3,
+        "eng": "Which of the following descriptions of the image is incorrect?\n(1) : People are watching the game from the stands.\n(2) : The stadium is located in the middle of the city.\n(3) : There are almost no clouds in the sky.\n(4) : Many people are cheering with their arms raised.",
+        "img": "6.jpg"
+    }
+]
