@@ -10,6 +10,7 @@ code/ch05/whisper_stt.py
 code/ch06/image_quiz.py
 code/ch07/function_calling.py
 code/ch07/get_time.py
+code/ch07/gpt_finance.py
 code/llm_proj.egg-info/PKG-INFO
 code/llm_proj.egg-info/SOURCES.txt
 code/llm_proj.egg-info/dependency_links.txt

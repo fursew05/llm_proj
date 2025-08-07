@@ -2,7 +2,7 @@
 import pytz
 from datetime import datetime
 
-def get_time(timezone : str = 'Asia/Seoul'):
+def get_time(timezone : str = 'Asia/Seoul')->str:
     tz = pytz.timezone(timezone)
     time = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
     now_timezone = f'{time}{timezone}'
